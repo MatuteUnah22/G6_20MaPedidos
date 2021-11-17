@@ -1,6 +1,13 @@
 <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS'){
+        header('Access-Control-Allow-Headers: token, Content-Type');
+        header('Content-Length: 0');
+        header('Content-Type: text/plain');
+        die();
+    };       
     
     header('Content-Type: application/json');
+    
 
     require_once("../config/conexion.php");
     require_once("../models/Pedidos.php");
